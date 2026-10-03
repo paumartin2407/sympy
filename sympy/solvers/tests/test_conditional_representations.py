@@ -9,8 +9,8 @@ from sympy.solvers.conditional import (
     _conditional_union, _linear_solution_branches)
 
 
-@pytest.fixture
-def encodings():
+@pytest.fixture(name='encodings')
+def _encodings():
     a, b, x = symbols('a b x', finite=True)
     branches = _linear_solution_branches(a, b, x)
     return a, b, x, (
